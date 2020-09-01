@@ -10,5 +10,15 @@ public class ProgramTask62 {
             array2[9 - i] = array[i];
         }
         System.out.println(Arrays.toString(array2));
+        System.out.println(Arrays.toString(reverseIntArray(array)));
+    }
+
+    public static int[] reverseIntArray(int[] inputArray) {
+        int arrayLen = inputArray.length;
+        int[] result = new int[arrayLen];
+        for (int i = 0; i < arrayLen; i++) {
+            result[arrayLen - 1 - i] = inputArray[i];
+        }
+        return result;
     }
 }
