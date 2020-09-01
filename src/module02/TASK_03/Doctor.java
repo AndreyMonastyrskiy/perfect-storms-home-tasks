@@ -1,6 +1,6 @@
 package module02.TASK_03;
 
-public class Doctor extends Employee {
+public class Doctor extends Employee implements Intellectual {
     public Doctor(String name, int age) {
         super(name, age);
     }

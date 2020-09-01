@@ -1,6 +1,6 @@
 package module02.TASK_03;
 
-public class Programmer extends Employee{
+public class Programmer extends Employee implements Intellectual{
     public Programmer(String name, int age) {
         super(name, age);
     }

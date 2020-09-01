@@ -1,6 +1,6 @@
 package module02.TASK_03;
 
-public class Builder extends Employee{
+public class Builder extends Employee implements  Strongman{
     public Builder(String name, int age) {
         super(name, age);
     }
