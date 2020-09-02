@@ -1,0 +1,18 @@
+Initialization order:
+1. Static variables and blocks in the order they are placed in the code
+2. Non-static variables and blocks in the order they are placed in the code
+3. Constructor
+
+Console output:
+String2
+String5
+String6
+String3
+String4
+String7
+String1
+
+
+
+
+
