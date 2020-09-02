@@ -10,4 +10,8 @@ public class Leon {
     public String getName() {
         return this.name;
     }
+
+    public static void updateLeonName(Leon leonInstance, String newName) {
+        leonInstance.name = newName;
+    }
 }
