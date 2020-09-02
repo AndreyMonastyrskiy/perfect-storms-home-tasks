@@ -1,1 +1,3 @@
-Nothing will be output to the console.
+The class will not compile, because in the "else" block there is a call to a non-existent variable "avg".
+If we correct the error with the variable "avg", then nothing will be displayed on the console,
+ since the entry point (main method) is not defined in the class.
