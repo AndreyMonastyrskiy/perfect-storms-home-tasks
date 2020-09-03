@@ -16,4 +16,5 @@ public abstract class Vehicle {
     public int getSize() {
         return this.size;
     }
+
 }
