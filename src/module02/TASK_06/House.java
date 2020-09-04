@@ -6,24 +6,21 @@ import java.util.Random;
 public class House {
     private long id;
     private Apartment[] apartments;
-    private Street street;
     private BuildingType buildingType;
     private int floorCount;
 
-    public House(long id, Apartment[] apartments, Street street, BuildingType buildingType, int floorCount) {
+    public House(long id, Apartment[] apartments, BuildingType buildingType, int floorCount) {
         this.id = id;
         this.apartments = apartments;
-        this.street = street;
         this.buildingType = buildingType;
         this.floorCount = floorCount;
     }
 
-    public House(long id, int apartmentsCountToGenerate, Street street, BuildingType buildingType, int floorCount,
-                 int roomsCount, int apartmentsCount, int lifeTime) {
+    public House(long id, int apartmentsCountToGenerate, BuildingType buildingType, int floorCount,
+                 int roomsCount, int apartmentsCount, int lifeTime, Street street) {
         this.id = id;
         this.apartments = Apartment.generateApartments(1, floorCount, roomsCount, roomsCount,
-                lifeTime, lifeTime, apartmentsCount);
-        this.street = street;
+                lifeTime, lifeTime, apartmentsCount, street);
         this.buildingType = buildingType;
         this.floorCount = floorCount;
     }
@@ -33,7 +30,6 @@ public class House {
 
         this.id = id;
         this.apartments = new Apartment[] {new Apartment()};
-        this.street = Street.values()[random.nextInt(Street.values().length)];
         this.buildingType = BuildingType.values()[random.nextInt(BuildingType.values().length)];
         this.floorCount = 1;
     }
@@ -45,14 +41,6 @@ public class House {
 
     public int getApartmentsNumber() {
         return this.apartments.length;
-    }
-
-    public Street getStreet() {
-        return this.street;
-    }
-
-    public void setStreet(Street street) {
-        this.street = street;
     }
 
     public BuildingType getBuildingType() {
@@ -68,10 +56,9 @@ public class House {
         return "House{" +
                 "id=" + id +
                 ", apartments=" + Arrays.toString(apartments) +
-                ", street=" + street.name() +
                 ", buildingType=" + buildingType.name() +
                 ", floorCount=" + floorCount +
-                '}';
+                '}' + System.lineSeparator();
     }
 
     public static House[] generateHouses(int houseCount) {
@@ -80,12 +67,37 @@ public class House {
 
         for (int i = 0; i < houseCount; i++) {
             result[i] = new House(i, 1 + rn.nextInt(100),
-                    Street.values()[rn.nextInt(Street.values().length)],
                     BuildingType.values()[rn.nextInt(BuildingType.values().length)],
-                    1 + rn.nextInt(100), 1 + rn.nextInt(10),
-                    1 + rn.nextInt(100), 1 + rn.nextInt(365));
+                    1 + rn.nextInt(100),
+                    1 + rn.nextInt(10),
+                    1 + rn.nextInt(100),
+                    1 + rn.nextInt(365),
+                    Street.values()[rn.nextInt(Street.values().length)]);
         }
 
+        return result;
+    }
+
+    public static Apartment[] getApartmentsWithRoomsCount(House[] houses, int roomsCount) {
+        Apartment[] result = new Apartment[0];
+        for (House house: houses) {
+            for (Apartment apartment: house.apartments) {
+                if (apartment.getNumberOfRooms() == roomsCount) {
+                    addToApartments(result, apartment);
+                }
+            }
+        }
+        return result;
+    }
+
+
+
+    private static Apartment[] addToApartments(Apartment[] apartments, Apartment newAppartment) {
+        Apartment[] result = new Apartment[apartments.length + 1];
+        for (int i = 0; i < apartments.length; i++) {
+            result[i] = apartments[i];
+        }
+        result[result.length - 1] = newAppartment;
         return result;
     }
 
