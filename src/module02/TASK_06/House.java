@@ -83,14 +83,37 @@ public class House {
         for (House house: houses) {
             for (Apartment apartment: house.apartments) {
                 if (apartment.getNumberOfRooms() == roomsCount) {
-                    addToApartments(result, apartment);
+                    result = addToApartments(result, apartment);
                 }
             }
         }
         return result;
     }
 
+    public static Apartment[] getApartmentsWithRoomsCountAndFloor(House[] houses, int roomsCount, int minFloor, int maxFloor) {
+        Apartment[] result = new Apartment[0];
+        for (House house: houses) {
+            for (Apartment apartment: house.apartments) {
+                if (apartment.getNumberOfRooms() == roomsCount &&
+                        (apartment.getFloor() >= minFloor && apartment.getFloor() <= maxFloor)) {
+                    result = addToApartments(result, apartment);
+                }
+            }
+        }
+        return result;
+    }
 
+    public static Apartment[] getApartmentsWithMinArea(House[] houses, int minimumArea) {
+        Apartment[] result = new Apartment[0];
+        for (House house: houses) {
+            for (Apartment apartment: house.apartments) {
+                if (apartment.getArea() >= minimumArea) {
+                    result = addToApartments(result, apartment);
+                }
+            }
+        }
+        return result;
+    }
 
     private static Apartment[] addToApartments(Apartment[] apartments, Apartment newAppartment) {
         Apartment[] result = new Apartment[apartments.length + 1];

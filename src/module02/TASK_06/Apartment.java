@@ -24,10 +24,6 @@ public class Apartment {
         return this.floor;
     }
 
-    public void setFloor(int floor) {
-        this.floor = floor;
-    }
-
     public int getNumberOfRooms() {
         return this.numberOfRooms;
     }
@@ -55,7 +51,7 @@ public class Apartment {
         for (int i = 0; i < apartmentCount; i++) {
             result[i] = new Apartment(minFloor + random.nextInt(maxFloor - minFloor + 1),
                     minRoomCount + random.nextInt(maxRoomCount - minRoomCount + 1),
-                    1 + random.nextInt(200),
+                    1 + random.nextInt(100),
                     minLifeTime + random.nextInt(maxLifeTime - minLifeTime + 1),
                     Street.values()[random.nextInt(Street.values().length)]);
         }
