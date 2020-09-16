@@ -2,6 +2,7 @@ package module02.TASK_11;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 public class ProgramTask11 {
     public static void main(String[] args) {
@@ -42,8 +43,12 @@ public class ProgramTask11 {
             Object person2 = personClass.getConstructor(int.class, String.class, String.class)
                     .newInstance( 0, "NoName", "NoCompany");
             System.out.println(person2);
-
-
+            System.out.println("-------------------------------------------------");
+            System.out.println("Is TestInterface1 interface: " + TestInterface1.class.isInterface());
+            System.out.println("Is TestClass1 interface: " + TestClass1.class.isInterface());
+            System.out.println("Is TestInterface1 public: " + Modifier.isPublic(TestInterface1.class.getModifiers()));
+            System.out.println("Is TestInterface1 static: " + Modifier.isStatic(TestInterface1.class.getModifiers()));
+            System.out.println("Is TestClass1 static: " + Modifier.isStatic(TestClass1.class.getModifiers()));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
