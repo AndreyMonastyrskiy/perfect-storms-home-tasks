@@ -61,7 +61,7 @@ public class ProgramTask12 {
         }
     }
 
-    // Unbounded Wildcard
+    //  Unbounded Wildcard
     private static void printLastFromList(List<?> list) {
         System.out.println("Last element from list: " + list.get(list.size() - 1));
     }
