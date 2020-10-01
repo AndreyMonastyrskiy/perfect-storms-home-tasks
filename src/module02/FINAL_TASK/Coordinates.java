@@ -75,4 +75,12 @@ public class Coordinates {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Coordinates{" +
+                "number=" + number +
+                ", letter=" + letter +
+                '}';
+    }
 }
