@@ -35,7 +35,7 @@ public class ChessBoard {
     public void drawBoard() {
         final char[] LETTERS = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
         System.out.println("-----------------------");
-        for (int i = 0; i < 8; i++) {
+        for (int i = 7; i >= 0; i--) {
             System.out.print(LETTERS[i] + "|");
             for (int j = 0; j < 8; j++) {
                 System.out.print((board[i][j] == null ? "\u2001" : board[i][j].getImage()) + "|");

@@ -9,7 +9,7 @@ public class PieceQueen implements ChessPiece{
 
     @Override
     public String getImage() {
-        return this.color == ChessPieceColor.WHITE ? "\u2655" : "\u265A";
+        return this.color == ChessPieceColor.WHITE ? "\u2655" : "\u265B";
     }
 
     @Override
