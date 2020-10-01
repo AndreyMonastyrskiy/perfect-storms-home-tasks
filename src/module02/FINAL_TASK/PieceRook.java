@@ -1,15 +1,15 @@
 package module02.FINAL_TASK;
 
-public class PieceKing implements ChessPiece{
+public class PieceRook implements ChessPiece{
     private ChessPieceColor color;
 
-    public PieceKing (ChessPieceColor color) {
+    public PieceRook (ChessPieceColor color) {
         this.color = color;
     }
 
     @Override
     public String getImage() {
-        return this.color == ChessPieceColor.WHITE ? "\u2654" : "\u265A";
+        return this.color == ChessPieceColor.WHITE ? "\u2656" : "\u265C";
     }
 
     @Override
