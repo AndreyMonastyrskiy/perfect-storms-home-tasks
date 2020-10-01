@@ -22,4 +22,10 @@ public class PieceQueen implements ChessPiece{
     public ChessPieceColor getColor() {
         return this.color;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s {color = %s; image = %s}",
+                this.getClass().getSimpleName(), this.color, this.getImage());
+    }
 }
