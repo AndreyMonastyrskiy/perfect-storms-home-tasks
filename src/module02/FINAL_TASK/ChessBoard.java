@@ -45,4 +45,6 @@ public class ChessBoard {
         System.out.println("  |\u2005a\u2006|\u2005b\u2006|\u2005c\u2006|\u2005d\u2006|" +
                 "\u2005e\u2006|\u2005f\u2006|\u2005g\u2006|\u2005h\u2006|");
     }
+
+
 }

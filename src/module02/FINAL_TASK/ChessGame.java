@@ -7,7 +7,14 @@ public class ChessGame {
         //System.out.println("|\u2654|\u2001|\u2654|\u265B|");
         //System.out.println("------------");
         //System.out.println("|\u2001|\u2654|\u265E|\u2654|");
-        ChessBoard cb = new ChessBoard();
-        cb.drawBoard();
+        //ChessBoard cb = new ChessBoard();
+        //cb.drawBoard();
+        String coord = "b8";
+        if (Coordinates.validate(coord)) {
+            Coordinates crd = new Coordinates(coord);
+            System.out.println(crd.getLetterForArray() + " " + crd.getNumberForArray());
+        } else {
+            System.out.println("Wrong coordinates");
+        }
     }
 }
