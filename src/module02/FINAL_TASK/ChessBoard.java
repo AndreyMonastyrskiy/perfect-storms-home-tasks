@@ -33,17 +33,16 @@ public class ChessBoard {
     }
 
     public void drawBoard() {
-        final char[] LETTERS = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
-        System.out.println("-----------------------");
+        System.out.println("------------------------");
         for (int i = 7; i >= 0; i--) {
-            System.out.print(LETTERS[i] + "|");
+            System.out.print((i + 1) + " |");
             for (int j = 0; j < 8; j++) {
                 System.out.print((board[i][j] == null ? "\u2001" : board[i][j].getImage()) + "|");
             }
             System.out.println();
-            System.out.println("-----------------------");
+            System.out.println("------------------------");
         }
-        System.out.println(" |\u20051\u2006|\u20052\u2006|\u20053\u2006|\u20054\u2006|" +
-                "\u20055\u2006|\u20056\u2006|\u20057\u2006|\u20058\u2006|");
+        System.out.println("  |\u2005a\u2006|\u2005b\u2006|\u2005c\u2006|\u2005d\u2006|" +
+                "\u2005e\u2006|\u2005f\u2006|\u2005g\u2006|\u2005h\u2006|");
     }
 }
