@@ -13,7 +13,7 @@ public class PieceRook implements ChessPiece{
     }
 
     @Override
-    public boolean move(ChessBoard chessBoard, String from, String to) {
+    public boolean canMove(ChessBoard chessBoard, String from, String to) {
         // TODO
         return false;
     }
