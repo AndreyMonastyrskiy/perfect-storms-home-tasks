@@ -17,10 +17,14 @@ public class ChessBoard {
                         new PiecePawn(ChessPieceColor.WHITE), new PiecePawn(ChessPieceColor.WHITE),
                         new PiecePawn(ChessPieceColor.WHITE), new PiecePawn(ChessPieceColor.WHITE),
                         new PiecePawn(ChessPieceColor.WHITE), new PiecePawn(ChessPieceColor.WHITE)},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
+                {new PieceNone(), new PieceNone(), new PieceNone(), new PieceNone(),
+                        new PieceNone(), new PieceNone(), new PieceNone(), new PieceNone()},
+                {new PieceNone(), new PieceNone(), new PieceNone(), new PieceNone(),
+                        new PieceNone(), new PieceNone(), new PieceNone(), new PieceNone()},
+                {new PieceNone(), new PieceNone(), new PieceNone(), new PieceNone(),
+                        new PieceNone(), new PieceNone(), new PieceNone(), new PieceNone()},
+                {new PieceNone(), new PieceNone(), new PieceNone(), new PieceNone(),
+                        new PieceNone(), new PieceNone(), new PieceNone(), new PieceNone()},
                 {new PiecePawn(ChessPieceColor.BLACK), new PiecePawn(ChessPieceColor.BLACK),
                         new PiecePawn(ChessPieceColor.BLACK), new PiecePawn(ChessPieceColor.BLACK),
                         new PiecePawn(ChessPieceColor.BLACK), new PiecePawn(ChessPieceColor.BLACK),
@@ -37,7 +41,7 @@ public class ChessBoard {
         for (int i = 7; i >= 0; i--) {
             System.out.print((i + 1) + " |");
             for (int j = 0; j < 8; j++) {
-                System.out.print((board[i][j] == null ? "\u2001" : board[i][j].getImage()) + "|");
+                System.out.print(board[i][j].getImage() + "|");
             }
             System.out.println();
             System.out.println("------------------------");

@@ -12,5 +12,6 @@ public class ChessGame {
         System.out.println();
         cb.movePiece(new Coordinates("a7"), new Coordinates("a6"));
         cb.drawBoard();
+        System.out.println((int)'h');
     }
 }
