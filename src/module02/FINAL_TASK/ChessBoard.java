@@ -59,7 +59,7 @@ public class ChessBoard {
     }
 
     public void clearCell(Coordinates coordinates) {
-        this.board[coordinates.getNumberForArray()][coordinates.getLetterForArray()] = null;
+        this.board[coordinates.getNumberForArray()][coordinates.getLetterForArray()] = new PieceNone();
     }
 
     public Boolean movePiece(Coordinates from, Coordinates to) {

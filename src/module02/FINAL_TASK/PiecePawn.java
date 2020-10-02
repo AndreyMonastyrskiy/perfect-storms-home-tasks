@@ -17,18 +17,29 @@ public class PiecePawn  implements ChessPiece{
 
     @Override
     public boolean canMove(ChessBoard chessBoard, Coordinates from, Coordinates to) {
-        // TODO
+        //FIXME Not all cases checked:
+        // - Taking on the aisle
+        // - Threat to the king
+        // - Replacing the shape on the last line
         ChessPiece fromPeace = chessBoard.getPieceByCoordinates(from);
         ChessPiece toPeace = chessBoard.getPieceByCoordinates(to);
+        // must be different colors
         if (toPeace.getColor() == fromPeace.getColor()) { return false; }
-
-        if (fromPeace.getColor() == ChessPieceColor.WHITE) {
-
-        } else {
-
+        // sum of difference of coordinates must be < 3
+        // 3 2 3
+        // 2 1 2
+        if (Math.abs(from.getNumber() - to.getNumber()) +
+                Math.abs(from.getLetterForArray() - to.getLetterForArray()) > 2) {
+            return false;
         }
-
-        return false;
+        // Let's check the case when the pawn moves two steps forward
+        // The previous cell must be empty
+        if (Math.abs(to.getNumber() - from.getNumber()) == 2) {
+            if (chessBoard.getPieceByCoordinates(new Coordinates(from.getLetter(), (byte)(from.getNumber() + 1))).
+                    getColor() != ChessPieceColor.NONE) { return false; }
+        }
+        // can move if all ok
+        return true;
     }
 
     @Override
