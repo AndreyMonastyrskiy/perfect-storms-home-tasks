@@ -46,5 +46,25 @@ public class ChessBoard {
                 "\u2005e\u2006|\u2005f\u2006|\u2005g\u2006|\u2005h\u2006|");
     }
 
+    public ChessPiece getPieceByCoordinates(Coordinates coordinates) {
+        return this.board[coordinates.getNumberForArray()][coordinates.getLetterForArray()];
+    }
+
+    public void putPiece(ChessPiece piece, Coordinates coordinates) {
+        this.board[coordinates.getNumberForArray()][coordinates.getLetterForArray()] = piece;
+    }
+
+    public void clearCell(Coordinates coordinates) {
+        this.board[coordinates.getNumberForArray()][coordinates.getLetterForArray()] = null;
+    }
+
+    public Boolean movePiece(Coordinates from, Coordinates to) {
+        if (getPieceByCoordinates(from).canMove(this, from, to)) {
+            putPiece(getPieceByCoordinates(from), to);
+            clearCell(from);
+            return true;
+        }
+        return false;
+    }
 
 }

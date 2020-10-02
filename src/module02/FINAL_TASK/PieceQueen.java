@@ -13,7 +13,7 @@ public class PieceQueen implements ChessPiece{
     }
 
     @Override
-    public boolean canMove(ChessBoard chessBoard, String from, String to) {
+    public boolean canMove(ChessBoard chessBoard, Coordinates from, Coordinates to) {
         // TODO
         return false;
     }
