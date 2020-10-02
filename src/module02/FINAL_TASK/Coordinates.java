@@ -1,5 +1,7 @@
 package module02.FINAL_TASK;
 
+import java.util.List;
+
 public class Coordinates {
     private byte number;
     private char letter;
@@ -70,6 +72,15 @@ public class Coordinates {
             char letter = coordinates.charAt(0);
             byte number = Byte.parseByte(Character.toString(coordinates.charAt(1)));
             if ((letter >= 'a' && letter <= 'h') && (number >= 1 && number <= 8)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Boolean isInCoordinatesList(List<Coordinates> coordinatesList) {
+        for (Coordinates element: coordinatesList) {
+            if (this.number == element.getNumber() && this.letter == element.getLetter()) {
                 return true;
             }
         }
