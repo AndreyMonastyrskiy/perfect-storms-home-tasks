@@ -17,7 +17,9 @@ public class PieceRook implements ChessPiece {
 
     @Override
     public boolean canMove(ChessBoard chessBoard, Coordinates from, Coordinates to) {
-        // TODO
+        //FIXME Not all cases checked:
+        // - Сastling
+        // - Threat to the king
         ChessPiece fromPeace = chessBoard.getPieceByCoordinates(from);
         ChessPiece toPeace = chessBoard.getPieceByCoordinates(to);
         // must be different colors
