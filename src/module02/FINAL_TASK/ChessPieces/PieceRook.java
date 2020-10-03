@@ -51,7 +51,6 @@ public class PieceRook implements ChessPiece {
                     if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
                 }
             }
-
         }
         // can move if all ok
         return true;
