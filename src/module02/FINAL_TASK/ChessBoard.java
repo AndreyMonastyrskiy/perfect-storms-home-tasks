@@ -1,5 +1,7 @@
 package module02.FINAL_TASK;
 
+import module02.FINAL_TASK.ChessPieces.*;
+
 public class ChessBoard {
     private ChessPiece[][] board;
 

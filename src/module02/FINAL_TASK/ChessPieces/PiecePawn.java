@@ -1,9 +1,12 @@
-package module02.FINAL_TASK;
+package module02.FINAL_TASK.ChessPieces;
 
-import java.util.ArrayList;
-import java.util.List;
+import module02.FINAL_TASK.ChessBoard;
+import module02.FINAL_TASK.ChessPiece;
+import module02.FINAL_TASK.ChessPieceColor;
+import module02.FINAL_TASK.Coordinates;
 
-public class PiecePawn  implements ChessPiece{
+
+public class PiecePawn  implements ChessPiece {
     private ChessPieceColor color;
 
     public PiecePawn (ChessPieceColor color) {

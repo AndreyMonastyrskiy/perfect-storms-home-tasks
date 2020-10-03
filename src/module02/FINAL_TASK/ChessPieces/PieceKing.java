@@ -1,15 +1,20 @@
-package module02.FINAL_TASK;
+package module02.FINAL_TASK.ChessPieces;
 
-public class PieceKnight implements ChessPiece{
+import module02.FINAL_TASK.ChessBoard;
+import module02.FINAL_TASK.ChessPiece;
+import module02.FINAL_TASK.ChessPieceColor;
+import module02.FINAL_TASK.Coordinates;
+
+public class PieceKing implements ChessPiece {
     private ChessPieceColor color;
 
-    public PieceKnight (ChessPieceColor color) {
+    public PieceKing (ChessPieceColor color) {
         this.color = color;
     }
 
     @Override
     public String getImage() {
-        return this.color == ChessPieceColor.WHITE ? "\u2658" : "\u265E";
+        return this.color == ChessPieceColor.WHITE ? "\u2654" : "\u265A";
     }
 
     @Override
