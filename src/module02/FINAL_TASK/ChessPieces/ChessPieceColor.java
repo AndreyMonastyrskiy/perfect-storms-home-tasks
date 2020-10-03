@@ -1,4 +1,4 @@
-package module02.FINAL_TASK;
+package module02.FINAL_TASK.ChessPieces;
 
 public enum ChessPieceColor {
     WHITE,

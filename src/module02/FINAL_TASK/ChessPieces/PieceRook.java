@@ -1,8 +1,6 @@
 package module02.FINAL_TASK.ChessPieces;
 
 import module02.FINAL_TASK.ChessBoard;
-import module02.FINAL_TASK.ChessPiece;
-import module02.FINAL_TASK.ChessPieceColor;
 import module02.FINAL_TASK.Coordinates;
 
 public class PieceRook implements ChessPiece {
