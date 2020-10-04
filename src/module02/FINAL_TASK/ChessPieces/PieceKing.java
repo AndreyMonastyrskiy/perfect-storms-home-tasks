@@ -17,8 +17,23 @@ public class PieceKing implements ChessPiece {
 
     @Override
     public boolean canMove(ChessBoard chessBoard, Coordinates from, Coordinates to) {
-        // TODO
-        return false;
+        //FIXME Not all cases checked:
+        // - Threat to the king
+        // - Castling
+        ChessPiece fromPeace = chessBoard.getPieceByCoordinates(from);
+        ChessPiece toPeace = chessBoard.getPieceByCoordinates(to);
+        // must be different colors
+        if (toPeace.getColor() == fromPeace.getColor()) { return false; }
+        // sum of difference of coordinates must be < 3
+        // 3 2 3
+        // 2 1 2
+        if (Math.abs(from.getNumber() - to.getNumber()) +
+                Math.abs(from.getLetterForArray() - to.getLetterForArray()) > 2) {
+            return false;
+        }
+
+        // if all ok return true
+        return true;
     }
 
     @Override

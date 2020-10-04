@@ -34,10 +34,18 @@ public class PiecePawn  implements ChessPiece {
             return false;
         }
         // Let's check the case when the pawn moves two steps forward
-        // The previous cell must be empty
         if (Math.abs(to.getNumber() - from.getNumber()) == 2) {
-            if (chessBoard.getPieceByCoordinates(new Coordinates(from.getLetter(), (byte)(from.getNumber() + 1))).
-                    getColor() != ChessPieceColor.NONE) { return false; }
+            // two steps allowed only from start positions
+            if (from.getNumber() != 2 && from.getNumber() != 7) { return false; }
+            // The previous cell must be empty
+            if (fromPeace.getColor() == ChessPieceColor.WHITE) {
+                if (chessBoard.getPieceByCoordinates(new Coordinates(from.getLetter(), (byte)(from.getNumber() + 1))).
+                        getColor() != ChessPieceColor.NONE) { return false; }
+            } else {
+                if (chessBoard.getPieceByCoordinates(new Coordinates(from.getLetter(), (byte)(from.getNumber() - 1))).
+                        getColor() != ChessPieceColor.NONE) { return false; }
+            }
+
         }
         // can move only forward
         if (chessBoard.getPieceByCoordinates(from).getColor() == ChessPieceColor.WHITE) {
