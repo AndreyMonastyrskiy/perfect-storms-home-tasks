@@ -39,6 +39,8 @@ public class PieceRook implements ChessPiece {
                 }
             }
         } else { // vertical move
+            // Must be in the same vertical line
+            if (from.getLetter() != to.getLetter()) { return false; }
             // Select where to move up or down
             if (from.getNumber() < to.getNumber()) { //up
                 for (byte i = (byte)(from.getNumber() + 1); i < to.getNumber(); i++) {

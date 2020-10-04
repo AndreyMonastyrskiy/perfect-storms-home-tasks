@@ -23,37 +23,36 @@ public class PieceBishop implements ChessPiece {
         ChessPiece toPeace = chessBoard.getPieceByCoordinates(to);
         // must be different colors
         if (toPeace.getColor() == fromPeace.getColor()) { return false; }
+        // ABS from.digit - to.digit must equal to from.letter - to.letter
+        if (Math.abs(from.getNumber() - to.getNumber()) !=
+                Math.abs(from.getLetter() - to.getLetter())) { return false; }
         // Determinate direction of movement
         if (from.getNumber() < to.getNumber()) { // up
             if (from.getLetter() < to.getLetter()) { // up right
                 for (byte i = (byte)(from.getNumber() + 1); i < to.getNumber(); i++) {
-                    for (char j = (char)(from.getLetter() + 1); j < to.getLetter(); j++) {
-                        ChessPiece currentPiece = chessBoard.getPieceByCoordinates(new Coordinates(j, i));
-                        if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
-                    }
+                    char j = (char)(from.getLetter() + i - from.getNumber());
+                    ChessPiece currentPiece = chessBoard.getPieceByCoordinates(new Coordinates(j, i));
+                    if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
                 }
             } else { // up left
                 for (byte i = (byte)(from.getNumber() + 1); i < to.getNumber(); i++) {
-                    for (char j = (char)(from.getLetter() - 1); j > to.getLetter(); j--) {
-                        ChessPiece currentPiece = chessBoard.getPieceByCoordinates(new Coordinates(j, i));
-                        if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
-                    }
+                    char j = (char)(from.getLetter() - (i - from.getNumber()));
+                    ChessPiece currentPiece = chessBoard.getPieceByCoordinates(new Coordinates(j, i));
+                    if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
                 }
             }
         } else { //down
             if (from.getLetter() < to.getLetter()) { // down right
                 for (byte i = (byte)(from.getNumber() - 1); i > to.getNumber(); i--) {
-                    for (char j = (char)(from.getLetter() + 1); j < to.getLetter(); j++) {
-                        ChessPiece currentPiece = chessBoard.getPieceByCoordinates(new Coordinates(j, i));
-                        if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
-                    }
+                    char j = (char)(from.getLetter() + from.getNumber() - i);
+                    ChessPiece currentPiece = chessBoard.getPieceByCoordinates(new Coordinates(j, i));
+                    if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
                 }
             } else { // down left
                 for (byte i = (byte)(from.getNumber() - 1); i > to.getNumber(); i--) {
-                    for (char j = (char)(from.getLetter() - 1); j > to.getLetter(); j--) {
-                        ChessPiece currentPiece = chessBoard.getPieceByCoordinates(new Coordinates(j, i));
-                        if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
-                    }
+                    char j = (char)(from.getLetter() - (from.getNumber() - i));
+                    ChessPiece currentPiece = chessBoard.getPieceByCoordinates(new Coordinates(j, i));
+                    if (currentPiece.getColor() != ChessPieceColor.NONE) { return false; }
                 }
             }
         }
