@@ -39,6 +39,12 @@ public class PiecePawn  implements ChessPiece {
             if (chessBoard.getPieceByCoordinates(new Coordinates(from.getLetter(), (byte)(from.getNumber() + 1))).
                     getColor() != ChessPieceColor.NONE) { return false; }
         }
+        // can move only forward
+        if (chessBoard.getPieceByCoordinates(from).getColor() == ChessPieceColor.WHITE) {
+            if (to.getNumber() <= from.getNumber()) { return false; }
+        } else {
+            if (to.getNumber() >= from.getNumber()) { return false; }
+        }
         // can move if all ok
         return true;
     }
