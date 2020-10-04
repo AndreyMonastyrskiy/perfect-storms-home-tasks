@@ -8,12 +8,14 @@ public class ChessGame {
         //System.out.println("------------");
         //System.out.println("|\u2001|\u2654|\u265E|\u2654|");
         ChessBoard cb = new ChessBoard();
-        cb.movePiece(new Coordinates("g1"), new Coordinates("h3"));
         cb.movePiece(new Coordinates("e2"), new Coordinates("e3"));
-        cb.movePiece(new Coordinates("f1"), new Coordinates("d3"));
-        cb.movePiece(new Coordinates("f1"), new Coordinates("d3"));
-        cb.movePiece(new Coordinates("f2"), new Coordinates("f3"));
-        cb.movePiece(new Coordinates("h1"), new Coordinates("f1"));
+        cb.movePiece(new Coordinates("d1"), new Coordinates("f3"));
+        cb.movePiece(new Coordinates("f3"), new Coordinates("f8"));
+        cb.movePiece(new Coordinates("f3"), new Coordinates("b7"));
+        cb.movePiece(new Coordinates("b7"), new Coordinates("c7"));
+        cb.movePiece(new Coordinates("d8"), new Coordinates("c7"));
+        cb.movePiece(new Coordinates("c7"), new Coordinates("c1"));
+        cb.movePiece(new Coordinates("c7"), new Coordinates("h2"));
 
         cb.drawBoard();
     }
