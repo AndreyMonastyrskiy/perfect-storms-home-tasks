@@ -24,14 +24,21 @@ public class PieceKing implements ChessPiece {
         ChessPiece toPeace = chessBoard.getPieceByCoordinates(to);
         // must be different colors
         if (toPeace.getColor() == fromPeace.getColor()) { return false; }
-        // sum of difference of coordinates must be < 3
-        // 3 2 3
-        // 2 1 2
+        // check if piece move exactly vertically
+        if (from.getLetter() == to.getLetter()) {
+            // maximum 1 step
+            if (Math.abs(from.getNumber() - to.getNumber()) > 1) { return false; }
+        }
+        // check if piece move exactly horizontally
+        if (from.getNumber() == to.getNumber()) {
+            // maximum 1 step
+            if (Math.abs(from.getLetter() - to.getLetter()) > 1) { return false; }
+        }
+        // if piece move obliquely maximum allowed difference in coordinates is 2
         if (Math.abs(from.getNumber() - to.getNumber()) +
                 Math.abs(from.getLetterForArray() - to.getLetterForArray()) > 2) {
             return false;
         }
-
         // if all ok return true
         return true;
     }
