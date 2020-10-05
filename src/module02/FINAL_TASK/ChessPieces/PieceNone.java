@@ -1,5 +1,12 @@
 package module02.FINAL_TASK.ChessPieces;
 
+/**
+ * A class for a virtual chess piece defining an empty square on a chessboard.
+ * Implements the interface ChessPiece.
+ *
+ * @author Andrey Monastyrskiy
+ */
+
 import module02.FINAL_TASK.ChessBoard;
 import module02.FINAL_TASK.Coordinates;
 

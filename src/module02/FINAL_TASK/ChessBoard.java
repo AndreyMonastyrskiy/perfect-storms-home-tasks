@@ -1,5 +1,11 @@
 package module02.FINAL_TASK;
 
+/**
+ * The class implements the logic for storing and displaying the state of a chessboard with figures.
+ *
+ * @author Andrey Monastyrskiy
+ */
+
 import module02.FINAL_TASK.ChessPieces.*;
 
 public class ChessBoard {
