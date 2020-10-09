@@ -44,18 +44,8 @@ public class ChessBoard {
         };
     }
 
-    public void drawBoard() {
-        System.out.println("------------------------");
-        for (int i = 7; i >= 0; i--) {
-            System.out.print((i + 1) + " |");
-            for (int j = 0; j < 8; j++) {
-                System.out.print(board[i][j].getPieceUnicodeSymbol() + "|");
-            }
-            System.out.println();
-            System.out.println("------------------------");
-        }
-        System.out.println("  |\u2005a\u2006|\u2005b\u2006|\u2005c\u2006|\u2005d\u2006|" +
-                "\u2005e\u2006|\u2005f\u2006|\u2005g\u2006|\u2005h\u2006|");
+    public ChessPiece[][] getBoard() {
+        return this.board;
     }
 
     public ChessPiece getPieceByCoordinates(Coordinates coordinates) {

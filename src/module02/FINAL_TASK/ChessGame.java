@@ -14,7 +14,8 @@ public class ChessGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ChessBoard board = new ChessBoard();
-        board.drawBoard();
+        ChessBoardConsoleUI.drawBoard(board);
+        //board.drawBoard();
         ChessPieceColor colorToMove = ChessPieceColor.WHITE;
         String userInput = "";
 
@@ -49,7 +50,8 @@ public class ChessGame {
                 System.out.println("Can't move! Try another coordinates, or type exit.");
                 continue;
             }
-            board.drawBoard();
+            ChessBoardConsoleUI.drawBoard(board);
+            //board.drawBoard();
 
             // change color of piece to move
             if (colorToMove == ChessPieceColor.WHITE) {
