@@ -11,7 +11,7 @@ public class PieceBishop implements ChessPiece {
     }
 
     @Override
-    public String getImage() {
+    public String getPieceUnicodeSymbol() {
         return this.color == ChessPieceColor.WHITE ? "\u2657" : "\u265D";
     }
 
@@ -68,6 +68,6 @@ public class PieceBishop implements ChessPiece {
     @Override
     public String toString() {
         return String.format("%s {color = %s; image = %s}",
-                this.getClass().getSimpleName(), this.color, this.getImage());
+                this.getClass().getSimpleName(), this.color, this.getPieceUnicodeSymbol());
     }
 }

@@ -11,7 +11,7 @@ public class PieceNone implements ChessPiece {
     }
 
     @Override
-    public String getImage() {
+    public String getPieceUnicodeSymbol() {
         return "\u2001";
     }
 
@@ -28,6 +28,6 @@ public class PieceNone implements ChessPiece {
     @Override
     public String toString() {
         return String.format("%s {color = %s; image = %s}",
-                this.getClass().getSimpleName(), this.color, this.getImage());
+                this.getClass().getSimpleName(), this.color, this.getPieceUnicodeSymbol());
     }
 }
