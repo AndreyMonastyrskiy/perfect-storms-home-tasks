@@ -1,4 +1,10 @@
 package module02.FINAL_TASK;
+/**
+ * A class with a main method.
+ * Allows you to enter coordinates for moving pieces around the chessboard and displays the result.
+ *
+ * @author Andrey Monastyrskiy
+ */
 
 import module02.FINAL_TASK.ChessPieces.ChessPieceColor;
 

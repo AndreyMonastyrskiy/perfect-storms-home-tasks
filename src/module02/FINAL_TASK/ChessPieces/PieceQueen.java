@@ -1,5 +1,12 @@
 package module02.FINAL_TASK.ChessPieces;
 
+/**
+ * A class for a chess piece Queen.
+ * Implements the interface ChessPiece.
+ *
+ * @author Andrey Monastyrskiy
+ */
+
 import module02.FINAL_TASK.ChessBoard;
 import module02.FINAL_TASK.Coordinates;
 

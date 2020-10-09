@@ -1,5 +1,11 @@
 package module02.FINAL_TASK;
 
+/**
+ * The class implements the logic of storing and working with the coordinates of the chessboard.
+ *
+ * @author Andrey Monastyrskiy
+ */
+
 import java.util.List;
 
 public class Coordinates {
