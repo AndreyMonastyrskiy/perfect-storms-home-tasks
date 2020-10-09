@@ -2,7 +2,7 @@ package module02.FINAL_TASK.ChessPieces;
 
 /**
  * A class for a chess piece Queen.
- * Implements the interface ChessPiece.
+ * Extends class ChessPiece.
  *
  * @author Andrey Monastyrskiy
  */
@@ -13,16 +13,16 @@ import module02.FINAL_TASK.Coordinates;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PieceQueen implements ChessPiece {
+public class PieceQueen extends ChessPiece {
     private ChessPieceColor color;
 
     public PieceQueen (ChessPieceColor color) {
-        this.color = color;
+        super(color);
     }
 
     @Override
-    public String getPieceUnicodeSymbol() {
-        return this.color == ChessPieceColor.WHITE ? "\u2655" : "\u265B";
+    public ChessPieceTypes getType() {
+        return ChessPieceTypes.QUEEN;
     }
 
     @Override
@@ -148,14 +148,4 @@ public class PieceQueen implements ChessPiece {
         }
     }
 
-    @Override
-    public ChessPieceColor getColor() {
-        return this.color;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s {color = %s; image = %s}",
-                this.getClass().getSimpleName(), this.color, this.getPieceUnicodeSymbol());
-    }
 }

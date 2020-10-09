@@ -2,7 +2,7 @@ package module02.FINAL_TASK.ChessPieces;
 
 /**
  * A class for a chess piece Pawn.
- * Implements the interface ChessPiece.
+ * Extends class ChessPiece.
  *
  * @author Andrey Monastyrskiy
  */
@@ -11,16 +11,16 @@ import module02.FINAL_TASK.ChessBoard;
 import module02.FINAL_TASK.Coordinates;
 
 
-public class PiecePawn  implements ChessPiece {
+public class PiecePawn extends ChessPiece {
     private ChessPieceColor color;
 
     public PiecePawn (ChessPieceColor color) {
-        this.color = color;
+        super(color);
     }
 
     @Override
-    public String getPieceUnicodeSymbol() {
-        return this.color == ChessPieceColor.WHITE ? "\u2659" : "\u265F";
+    public ChessPieceTypes getType() {
+        return ChessPieceTypes.PAWN;
     }
 
     @Override
@@ -62,16 +62,5 @@ public class PiecePawn  implements ChessPiece {
         }
         // can move if all ok
         return true;
-    }
-
-    @Override
-    public ChessPieceColor getColor() {
-        return this.color;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s {color = %s; image = %s}",
-                this.getClass().getSimpleName(), this.color, this.getPieceUnicodeSymbol());
     }
 }

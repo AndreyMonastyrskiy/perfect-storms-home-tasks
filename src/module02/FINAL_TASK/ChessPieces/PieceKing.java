@@ -2,7 +2,7 @@ package module02.FINAL_TASK.ChessPieces;
 
 /**
  * A class for a chess piece King.
- * Implements the interface ChessPiece.
+ * Extends class ChessPiece.
  *
  * @author Andrey Monastyrskiy
  */
@@ -10,16 +10,16 @@ package module02.FINAL_TASK.ChessPieces;
 import module02.FINAL_TASK.ChessBoard;
 import module02.FINAL_TASK.Coordinates;
 
-public class PieceKing implements ChessPiece {
+public class PieceKing extends ChessPiece {
     private ChessPieceColor color;
 
     public PieceKing (ChessPieceColor color) {
-        this.color = color;
+        super(color);
     }
 
     @Override
-    public String getPieceUnicodeSymbol() {
-        return this.color == ChessPieceColor.WHITE ? "\u2654" : "\u265A";
+    public ChessPieceTypes getType() {
+        return ChessPieceTypes.KING;
     }
 
     @Override
@@ -50,14 +50,4 @@ public class PieceKing implements ChessPiece {
         return true;
     }
 
-    @Override
-    public ChessPieceColor getColor() {
-        return this.color;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s {color = %s; image = %s}",
-                this.getClass().getSimpleName(), this.color, this.getPieceUnicodeSymbol());
-    }
 }

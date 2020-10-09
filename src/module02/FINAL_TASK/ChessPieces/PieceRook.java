@@ -2,7 +2,7 @@ package module02.FINAL_TASK.ChessPieces;
 
 /**
  * A class for a chess piece Rook.
- * Implements the interface ChessPiece.
+ * Extends class ChessPiece.
  *
  * @author Andrey Monastyrskiy
  */
@@ -10,16 +10,16 @@ package module02.FINAL_TASK.ChessPieces;
 import module02.FINAL_TASK.ChessBoard;
 import module02.FINAL_TASK.Coordinates;
 
-public class PieceRook implements ChessPiece {
+public class PieceRook extends ChessPiece {
     private ChessPieceColor color;
 
     public PieceRook (ChessPieceColor color) {
-        this.color = color;
+        super(color);
     }
 
     @Override
-    public String getPieceUnicodeSymbol() {
-        return this.color == ChessPieceColor.WHITE ? "\u2656" : "\u265C";
+    public ChessPieceTypes getType() {
+        return ChessPieceTypes.ROOK;
     }
 
     @Override
@@ -63,16 +63,5 @@ public class PieceRook implements ChessPiece {
         }
         // can move if all ok
         return true;
-    }
-
-    @Override
-    public ChessPieceColor getColor() {
-        return this.color;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s {color = %s; image = %s}",
-                this.getClass().getSimpleName(), this.color, this.getPieceUnicodeSymbol());
     }
 }

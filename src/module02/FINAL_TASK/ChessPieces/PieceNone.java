@@ -2,7 +2,7 @@ package module02.FINAL_TASK.ChessPieces;
 
 /**
  * A class for a virtual chess piece defining an empty square on a chessboard.
- * Implements the interface ChessPiece.
+ * Extends class ChessPiece.
  *
  * @author Andrey Monastyrskiy
  */
@@ -10,16 +10,16 @@ package module02.FINAL_TASK.ChessPieces;
 import module02.FINAL_TASK.ChessBoard;
 import module02.FINAL_TASK.Coordinates;
 
-public class PieceNone implements ChessPiece {
+public class PieceNone extends ChessPiece {
     private ChessPieceColor color;
 
     public PieceNone () {
-        this.color = ChessPieceColor.NONE;
+        super(ChessPieceColor.NONE);
     }
 
     @Override
-    public String getPieceUnicodeSymbol() {
-        return "\u2001";
+    public ChessPieceTypes getType() {
+        return ChessPieceTypes.NONE;
     }
 
     @Override
@@ -27,14 +27,4 @@ public class PieceNone implements ChessPiece {
         return false;
     }
 
-    @Override
-    public ChessPieceColor getColor() {
-        return ChessPieceColor.NONE;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s {color = %s; image = %s}",
-                this.getClass().getSimpleName(), this.color, this.getPieceUnicodeSymbol());
-    }
 }

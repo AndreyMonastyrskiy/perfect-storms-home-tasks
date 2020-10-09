@@ -7,6 +7,7 @@ package module02.FINAL_TASK;
  */
 
 import module02.FINAL_TASK.ChessPieces.ChessPieceColor;
+import module02.FINAL_TASK.ChessPieces.PieceKing;
 
 import java.util.Scanner;
 
@@ -62,5 +63,7 @@ public class ChessGame {
         } while (!userInput.equals("exit"));
 
         scanner.close();
+
+        System.out.println(new PieceKing(ChessPieceColor.BLACK));
     }
 }
