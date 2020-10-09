@@ -8,7 +8,7 @@ import module02.FINAL_TASK.ChessPieces.ChessPiece;
  * @author Andrey Monastyrskiy
  */
 
-public class ChessBoardConsoleUI {
+public abstract class ChessBoardConsoleUI {
 
     public static void drawBoard(ChessBoard chessBoard) {
         ChessPiece[][] board = chessBoard.getBoard();
