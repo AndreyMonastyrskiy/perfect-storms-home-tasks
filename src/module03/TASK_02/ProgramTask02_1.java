@@ -1,6 +1,7 @@
 package module03.TASK_02;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class ProgramTask02_1 {
         System.out.println("Time for removing elements from LinkedList: " + (endTime - startTime) + " ms");
 
         System.out.println("ArrayList work faster in search operations, " +
-                "and when it is necessary to refer to elements by index.");
+                "and when it is necessary to refer to elements by an index.");
         System.out.println("LinkedList work faster when it is necessary to frequently remove or add new elements.");
     }
 }
