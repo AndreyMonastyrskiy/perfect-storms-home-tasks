@@ -62,9 +62,4 @@ public class EvenListItrerator implements Iterator<Integer> {
         return returnValue;
     }
 
-    @Override
-    public void remove() {
-        iterator.remove();
-    }
-
 }

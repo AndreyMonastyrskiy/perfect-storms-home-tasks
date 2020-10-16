@@ -11,7 +11,9 @@ public class ProgramTask02_3 {
         list.add(5);
         list.add(7);
         list.add(8);
+
         EvenListItrerator iterator = new EvenListItrerator(list);
+
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
