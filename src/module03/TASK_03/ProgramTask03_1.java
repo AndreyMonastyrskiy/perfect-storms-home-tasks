@@ -1,5 +1,7 @@
 package module03.TASK_03;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -20,17 +22,17 @@ public class ProgramTask03_1 {
 
     private static boolean isArmstrongNumber(long number) {
         ArrayList<Byte> longDigits = new ArrayList<>();
-        long sum = 0;
+        BigInteger sum = BigInteger.valueOf(0);
 
         for (Character digit: String.valueOf(number).toCharArray()) {
             longDigits.add(Byte.parseByte(digit.toString()));
         }
 
         for (Byte digit: longDigits) {
-            sum += Math.pow(digit, longDigits.size());
+            sum = sum.add(BigDecimal.valueOf(Math.pow(digit, longDigits.size())).toBigInteger());
         }
 
-        if (sum == number) {
+        if (sum.compareTo(BigInteger.valueOf(number)) == 0) {
             return true;
         }
         return false;
