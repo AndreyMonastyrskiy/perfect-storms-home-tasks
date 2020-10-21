@@ -1,5 +1,13 @@
 package module03.TASK_03;
 
+/**
+ * Armstrong numbers searcher for Long.MAX_VALUE
+ *
+ * Optimization of runtime and memory usage is needed
+ *
+ * @author Andrey Monastyrskiy
+ */
+
 import java.util.*;
 
 public class ProgramTask03_3 {

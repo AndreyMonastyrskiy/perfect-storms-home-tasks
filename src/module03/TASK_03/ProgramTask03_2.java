@@ -1,8 +1,12 @@
 package module03.TASK_03;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.time.Instant;
+/**
+ * Saved for history.
+ * Better solution in ProgramTask03_3.java
+ *
+ * @author Andrey Monastyrskiy
+ */
+
 import java.util.*;
 
 public class ProgramTask03_2 {
