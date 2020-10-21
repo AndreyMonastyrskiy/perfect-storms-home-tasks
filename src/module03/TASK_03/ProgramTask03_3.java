@@ -66,10 +66,10 @@ public class ProgramTask03_3 {
             for (Long digit: arrayNumber) {
                 sum += powers.get(arrayNumber.length)[digit.intValue()];
             }
-            if (sum > number) { continue; }
+            //if (sum > number) { continue; }
 
             // check number
-            if (isArmstrongNumber(sum, powers)) {
+            if (sum <= number && isArmstrongNumber(sum, powers)) {
                 result.add(sum);
             }
 
