@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ProgramTask06_01 {
+public class ProgramTask06_02 {
     public static void main(String[] args) {
         ArrayList<Car> cars = new ArrayList<>();
         cars.add(new Car("Tesla", 666));
